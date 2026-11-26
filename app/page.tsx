@@ -350,7 +350,7 @@ export default function ShlokaLandingPage() {
 
       {/* 2. STICKY NAVBAR */}
       <header className="sticky top-0 z-50 bg-[#10294B]/95 backdrop-blur-md border-b border-white/10 shadow-lg transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo & Brand Info */}
           <a
             href="#home"
@@ -564,22 +564,22 @@ export default function ShlokaLandingPage() {
       {/* 3. HERO SECTION */}
       <section
         id="home"
-        className="relative bg-gradient-to-b from-[#10294B] via-[#0D2342] to-[#10294B] text-white pt-10 pb-16 lg:py-20 overflow-hidden"
+        className="relative bg-gradient-to-b from-[#10294B] via-[#0D2342] to-[#10294B] text-white pt-3 pb-4 sm:pt-4 sm:pb-5 lg:pt-5 lg:pb-6 overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,189,63,0.15),rgba(255,255,255,0))] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             {/* Left Column: Headlines & Course Value */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-3">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5BD3F]/15 border border-[#F5BD3F]/40 text-[#F5BD3F] text-xs sm:text-sm font-bold tracking-wide">
-                <Sparkles className="w-4 h-4 text-[#F5BD3F]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5BD3F]/15 border border-[#F5BD3F]/40 text-[#F5BD3F] text-xs font-bold tracking-wide">
+                <Sparkles className="w-3.5 h-3.5 text-[#F5BD3F]" />
                 NEW BATCH STARTING SOON • 100% ONLINE TRAINING
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight sm:leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-black tracking-tight leading-tight">
                 START YOUR CAREER IN{" "}
                 <span className="text-[#F5BD3F] underline decoration-[#F5BD3F]/60 decoration-wavy decoration-2">
                   SOFTWARE TESTING!
@@ -587,52 +587,52 @@ export default function ShlokaLandingPage() {
               </h1>
 
               {/* Supporting Headline */}
-              <p className="text-lg sm:text-xl text-slate-200 font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-200 font-semibold leading-snug">
                 Learn Manual &amp; Automation Testing with Industry-Focused Online Training.
               </p>
 
               {/* Description */}
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                 Develop job-ready software testing skills with structured learning, live real-time
                 projects, framework development from scratch, resume grooming, and mock interview
                 preparation.
               </p>
 
               {/* Offer Highlight Box */}
-              <div className="bg-gradient-to-r from-[#163664] to-[#10294B] border-2 border-[#F5BD3F] rounded-2xl p-5 sm:p-6 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-[#F5BD3F] text-[#0D2342] text-[11px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+              <div className="bg-gradient-to-r from-[#163664] to-[#10294B] border-2 border-[#F5BD3F] rounded-2xl p-3 sm:p-3.5 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-[#F5BD3F] text-[#0D2342] text-[10px] font-extrabold px-2.5 py-0.5 rounded-bl-lg uppercase tracking-wider">
                   Combo Deal
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-11 gap-4 items-center">
-                  <div className="sm:col-span-5 space-y-1">
-                    <span className="text-xs uppercase font-bold tracking-wider text-slate-300">
+                <div className="grid grid-cols-1 sm:grid-cols-11 gap-2.5 items-center">
+                  <div className="sm:col-span-5 space-y-0.5">
+                    <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">
                       Primary Course
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-white">AUTOMATION TESTING</h3>
+                    <h3 className="text-lg sm:text-xl font-black text-white">AUTOMATION TESTING</h3>
                     <div className="flex items-baseline gap-2">
                       <span className="text-2xl sm:text-3xl font-black text-[#F5BD3F]">₹19,000</span>
                       <span className="text-xs text-slate-300">/ 45-Day Program</span>
                     </div>
                   </div>
 
-                  <div className="sm:col-span-1 text-center font-black text-[#F5BD3F] text-lg sm:text-xl">
+                  <div className="sm:col-span-1 text-center font-black text-[#F5BD3F] text-lg">
                     +
                   </div>
 
-                  <div className="sm:col-span-5 bg-[#0D2342]/90 border border-[#F5BD3F]/50 rounded-xl p-3.5 space-y-1">
+                  <div className="sm:col-span-5 bg-[#0D2342]/90 border border-[#F5BD3F]/50 rounded-xl p-2.5 space-y-0.5">
                     <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">
                       100% Free Add-On
                     </span>
-                    <h4 className="text-lg font-bold text-white">MANUAL TESTING TRAINING</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-white">MANUAL TESTING TRAINING</h4>
                     <p className="text-xs text-slate-300 leading-snug">
                       Included at <strong>₹0 extra fee</strong> with Automation enrolment!
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 text-xs text-slate-300 flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                <div className="mt-2 pt-2 border-t border-white/10 text-xs text-slate-300 flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#F5BD3F] flex-shrink-0" />
                   <span>
                     <strong>Clarification:</strong> Manual Testing is only free as an add-on with ₹19,000
                     Automation Testing enrolment.
@@ -641,57 +641,57 @@ export default function ShlokaLandingPage() {
               </div>
 
               {/* Additional Selling Points */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg p-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F5BD3F] flex-shrink-0" />
                   <span className="text-xs font-semibold text-slate-200">100% Online Training</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg p-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F5BD3F] flex-shrink-0" />
                   <span className="text-xs font-semibold text-slate-200">Free Demo Classes</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg p-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F5BD3F] flex-shrink-0" />
                   <span className="text-xs font-semibold text-slate-200">Practical Projects</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-lg p-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#F5BD3F] flex-shrink-0" />
                   <span className="text-xs font-semibold text-slate-200">Structured Curriculum</span>
                 </div>
               </div>
 
               {/* Trust Card */}
-              <div className="bg-[#F5BD3F] text-[#0D2342] rounded-xl p-4 sm:p-5 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="bg-[#F5BD3F] text-[#0D2342] rounded-xl p-3 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="text-center sm:text-left">
-                  <div className="text-xs uppercase font-extrabold tracking-wider opacity-90">
+                  <div className="text-[11px] uppercase font-extrabold tracking-wider opacity-90">
                     100% Placement Assistance
                   </div>
-                  <div className="text-2xl sm:text-3xl font-black">Up to 15 LPA*</div>
+                  <div className="text-xl sm:text-2xl font-black">Up to 15 LPA*</div>
                   <div className="text-xs font-semibold opacity-90">
                     Resume building, mock interviews and job referrals
                   </div>
                 </div>
                 <div className="text-center sm:text-right flex-shrink-0">
-                  <span className="inline-block bg-[#0D2342] text-white px-4 py-2 rounded-lg text-xs font-extrabold shadow">
+                  <span className="inline-block bg-[#0D2342] text-white px-3 py-1.5 rounded-lg text-xs font-extrabold shadow">
                     Over 2,500+ Placed Alumni
                   </span>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row gap-2.5 pt-0.5">
                 <button
                   onClick={() => scrollToSection("lead-form")}
-                  className="bg-[#F5BD3F] hover:bg-[#E2AB2E] text-[#0D2342] font-black text-base px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  className="bg-[#F5BD3F] hover:bg-[#E2AB2E] text-[#0D2342] font-black text-sm px-6 py-2.5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 >
                   <span>BOOK YOUR FREE DEMO CLASS</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => scrollToSection("curriculum")}
-                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white font-bold text-base px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-2"
+                  className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 hover:border-white font-bold text-sm px-5 py-2.5 rounded-xl transition-all flex items-center justify-center gap-2"
                 >
-                  <BookOpen className="w-5 h-5 text-[#F5BD3F]" />
+                  <BookOpen className="w-4 h-4 text-[#F5BD3F]" />
                   <span>EXPLORE CURRICULUM</span>
                 </button>
               </div>
@@ -699,34 +699,34 @@ export default function ShlokaLandingPage() {
 
             {/* Right Column: Premium Lead Form */}
             <div className="lg:col-span-5" id="lead-form">
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border-4 border-[#F5BD3F]/30 text-slate-800 relative">
+              <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-2xl border-4 border-[#F5BD3F]/30 text-slate-800 relative">
                 {/* Form Header */}
-                <div className="text-center mb-6">
-                  <span className="bg-[#10294B] text-[#F5BD3F] text-xs font-extrabold uppercase px-3 py-1 rounded-full tracking-wider">
+                <div className="text-center mb-2.5">
+                  <span className="bg-[#10294B] text-[#F5BD3F] text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full tracking-wider">
                     Fast-Track Your Career
                   </span>
-                  <h3 className="text-2xl font-black text-[#10294B] mt-2">
+                  <h3 className="text-lg sm:text-xl font-black text-[#10294B] mt-1">
                     Book Your Free Demo Class
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                  <p className="text-xs text-slate-600">
                     Fill the form below to reserve your live online session.
                   </p>
                 </div>
 
                 {/* Form Status Alerts */}
                 {submitStatus === "success" ? (
-                  <div className="p-6 bg-emerald-50 border-2 border-emerald-500 rounded-xl text-center space-y-4">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-600">
-                      <CheckCircle2 className="w-10 h-10" />
+                  <div className="p-5 bg-emerald-50 border-2 border-emerald-500 rounded-xl text-center space-y-3">
+                    <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-600">
+                      <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h4 className="text-xl font-black text-emerald-900">
+                    <h4 className="text-lg font-black text-emerald-900">
                       THANK YOU FOR YOUR INTEREST!
                     </h4>
-                    <p className="text-sm text-emerald-800 leading-relaxed">{statusMessage}</p>
+                    <p className="text-xs text-emerald-800 leading-relaxed">{statusMessage}</p>
 
-                    <div className="p-4 bg-white rounded-xl border border-emerald-200 text-xs text-slate-600 text-left space-y-1.5">
+                    <div className="p-3 bg-white rounded-xl border border-emerald-200 text-xs text-slate-600 text-left space-y-1">
                       <div className="font-bold text-slate-800 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600" /> What happens next?
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> What happens next?
                       </div>
                       <p>1. Our admissions counsellor will verify your enquiry details.</p>
                       <p>2. You will receive the demo class link and timing schedule.</p>
@@ -742,10 +742,10 @@ export default function ShlokaLandingPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                  <form onSubmit={handleFormSubmit} className="space-y-2.5">
                     {/* Missing Config Notification */}
                     {submitStatus === "missing_config" && (
-                      <div className="p-3 bg-amber-50 border border-amber-300 rounded-lg text-amber-800 text-xs flex items-start gap-2">
+                      <div className="p-2.5 bg-amber-50 border border-amber-300 rounded-lg text-amber-800 text-xs flex items-start gap-2">
                         <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
                         <div>{statusMessage}</div>
                       </div>
@@ -753,7 +753,7 @@ export default function ShlokaLandingPage() {
 
                     {/* Generic Network Error */}
                     {submitStatus === "error" && (
-                      <div className="p-3 bg-rose-50 border border-rose-300 rounded-lg text-rose-800 text-xs flex items-start gap-2">
+                      <div className="p-2.5 bg-rose-50 border border-rose-300 rounded-lg text-rose-800 text-xs flex items-start gap-2">
                         <AlertCircle className="w-4 h-4 text-rose-600 flex-shrink-0 mt-0.5" />
                         <div>{statusMessage}</div>
                       </div>
@@ -761,7 +761,7 @@ export default function ShlokaLandingPage() {
 
                     {/* Full Name */}
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
                         Full Name <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -770,24 +770,24 @@ export default function ShlokaLandingPage() {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Rahul Sharma"
-                        className={`w-full px-4 py-2.5 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
+                        className={`w-full px-3.5 py-2 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
                           formErrors.fullName
                             ? "border-rose-500 focus:ring-2 focus:ring-rose-200"
                             : "border-slate-300 focus:border-[#10294B] focus:ring-2 focus:ring-[#10294B]/10"
                         }`}
                       />
                       {formErrors.fullName && (
-                        <p className="text-rose-600 text-xs mt-1 font-medium">{formErrors.fullName}</p>
+                        <p className="text-rose-600 text-xs mt-0.5 font-medium">{formErrors.fullName}</p>
                       )}
                     </div>
 
                     {/* Mobile Number */}
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
                         Mobile Number <span className="text-rose-500">*</span>
                       </label>
                       <div className="relative">
-                        <span className="absolute left-3 top-2.5 text-sm font-semibold text-slate-500">
+                        <span className="absolute left-3 top-2 text-sm font-semibold text-slate-500">
                           +91
                         </span>
                         <input
@@ -797,7 +797,7 @@ export default function ShlokaLandingPage() {
                           value={formData.mobileNumber}
                           onChange={handleInputChange}
                           placeholder="9876543210"
-                          className={`w-full pl-12 pr-4 py-2.5 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
+                          className={`w-full pl-12 pr-3.5 py-2 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
                             formErrors.mobileNumber
                               ? "border-rose-500 focus:ring-2 focus:ring-rose-200"
                               : "border-slate-300 focus:border-[#10294B] focus:ring-2 focus:ring-[#10294B]/10"
@@ -805,7 +805,7 @@ export default function ShlokaLandingPage() {
                         />
                       </div>
                       {formErrors.mobileNumber && (
-                        <p className="text-rose-600 text-xs mt-1 font-medium">
+                        <p className="text-rose-600 text-xs mt-0.5 font-medium">
                           {formErrors.mobileNumber}
                         </p>
                       )}
@@ -813,14 +813,14 @@ export default function ShlokaLandingPage() {
 
                     {/* Highest Qualification */}
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
                         Highest Qualification <span className="text-rose-500">*</span>
                       </label>
                       <select
                         name="qualification"
                         value={formData.qualification}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-2.5 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
+                        className={`w-full px-3.5 py-2 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
                           formErrors.qualification
                             ? "border-rose-500 focus:ring-2 focus:ring-rose-200"
                             : "border-slate-300 focus:border-[#10294B] focus:ring-2 focus:ring-[#10294B]/10"
@@ -836,7 +836,7 @@ export default function ShlokaLandingPage() {
                         <option value="Working Professional">Working Professional (Career Switch)</option>
                       </select>
                       {formErrors.qualification && (
-                        <p className="text-rose-600 text-xs mt-1 font-medium">
+                        <p className="text-rose-600 text-xs mt-0.5 font-medium">
                           {formErrors.qualification}
                         </p>
                       )}
@@ -844,15 +844,15 @@ export default function ShlokaLandingPage() {
 
                     {/* Enquiry Type */}
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1">
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
                         Enquiry Type
                       </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
                         {["Book Free Demo Class", "Get Course Details", "Talk to a Counsellor"].map(
                           (type) => (
                             <label
                               key={type}
-                              className={`flex items-center gap-1.5 p-2 rounded-lg border text-xs cursor-pointer font-medium transition-colors ${
+                              className={`flex items-center gap-1.5 p-1.5 rounded-lg border text-[11px] cursor-pointer font-medium transition-colors ${
                                 formData.enquiryType === type
                                   ? "bg-[#10294B] text-[#F5BD3F] border-[#10294B]"
                                   : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
@@ -874,22 +874,22 @@ export default function ShlokaLandingPage() {
                     </div>
 
                     {/* Consent Checkbox */}
-                    <div className="pt-1">
-                      <label className="flex items-start gap-2.5 cursor-pointer">
+                    <div className="pt-0.5">
+                      <label className="flex items-start gap-2 cursor-pointer">
                         <input
                           type="checkbox"
                           name="consent"
                           checked={formData.consent}
                           onChange={handleInputChange}
-                          className="mt-1 h-4 w-4 rounded border-slate-300 text-[#10294B] focus:ring-[#10294B]"
+                          className="mt-0.5 h-3.5 w-3.5 rounded border-slate-300 text-[#10294B] focus:ring-[#10294B]"
                         />
-                        <span className="text-xs text-slate-600 leading-tight">
+                        <span className="text-[11px] text-slate-600 leading-tight">
                           I agree to receive course updates, free demo class details and counselling
                           information from Shloka Global Education.
                         </span>
                       </label>
                       {formErrors.consent && (
-                        <p className="text-rose-600 text-xs mt-1 font-medium">{formErrors.consent}</p>
+                        <p className="text-rose-600 text-xs mt-0.5 font-medium">{formErrors.consent}</p>
                       )}
                     </div>
 
@@ -897,11 +897,11 @@ export default function ShlokaLandingPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#F5BD3F] hover:bg-[#E2AB2E] disabled:opacity-75 disabled:cursor-not-allowed text-[#0D2342] font-black text-base py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-4"
+                      className="w-full bg-[#F5BD3F] hover:bg-[#E2AB2E] disabled:opacity-75 disabled:cursor-not-allowed text-[#0D2342] font-black text-sm py-2.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-2"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-[#0D2342] border-t-transparent rounded-full animate-spin" />
+                          <div className="w-4 h-4 border-2 border-[#0D2342] border-t-transparent rounded-full animate-spin" />
                           <span>Submitting enquiry...</span>
                         </>
                       ) : (
@@ -912,7 +912,7 @@ export default function ShlokaLandingPage() {
                       )}
                     </button>
 
-                    <p className="text-[11px] text-center text-slate-500 pt-1">
+                    <p className="text-[10px] text-center text-slate-500 pt-0.5">
                       🔒 100% Privacy Guaranteed. No Spam Ever.
                     </p>
                   </form>
@@ -924,15 +924,15 @@ export default function ShlokaLandingPage() {
       </section>
 
       {/* 4. ALL TOOLS & TECH STACK INFINITE SCROLL */}
-      <section id="tools" className="py-12 bg-white border-y border-slate-200 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
+      <section id="tools" className="py-6 sm:py-8 bg-white border-y border-slate-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
           <span className="text-xs font-black text-[#10294B] uppercase tracking-widest bg-[#F5BD3F]/30 px-3 py-1 rounded-full">
             In-Demand Industry Tech Stack
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10294B] mt-2">
+          <h2 className="text-xl sm:text-2xl font-black text-[#10294B] mt-1.5">
             TOOLS &amp; FRAMEWORKS COVERED IN TRAINING
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-1">
+          <p className="text-xs sm:text-sm text-slate-500 max-w-2xl mx-auto mt-0.5">
             Master the complete toolchain trusted by top Fortune 500 tech companies and high-growth startups.
           </p>
         </div>
@@ -980,7 +980,64 @@ export default function ShlokaLandingPage() {
         </div>
       </section>
 
-      {/* 5. SPECIAL COURSE OFFER */}
+      {/* 5. LIVE INTERACTIVE LEARNING SPOTLIGHT */}
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-[#10294B] via-[#0D2342] to-[#10294B] text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#F5BD3F]/40">
+              <Image
+                src="/images/hybrid-learning.png"
+                alt="Interactive Live Online Learning Session with Expert Mentors"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-3 left-3 bg-[#0D2342]/90 backdrop-blur-md text-[#F5BD3F] text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-[#F5BD3F]/30">
+                100% Live Instructor-Led
+              </div>
+            </div>
+            <div className="lg:col-span-6 space-y-4">
+              <span className="bg-[#F5BD3F] text-[#0D2342] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                Live Online Experience
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                Interactive Online Batches with Dedicated Mentorship
+              </h2>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                Learn directly from experienced SDET leads in real-time. Ask questions on the fly, get live screen-share debugging, and collaborate with like-minded peers across India.
+              </p>
+              <div className="grid grid-cols-2 gap-3 text-xs text-slate-200 pt-2">
+                <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                  <span>Daily Live Interactive Sessions</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                  <span>1-on-1 Screen-Sharing Doubt Resolution</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                  <span>HD Recordings &amp; Code Access</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
+                  <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                  <span>Weekday &amp; Weekend Batches</span>
+                </div>
+              </div>
+              <div className="pt-2">
+                <button
+                  onClick={() => scrollToSection("lead-form")}
+                  className="bg-[#F5BD3F] hover:bg-[#E2AB2E] text-[#0D2342] font-black text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition-transform hover:scale-105"
+                >
+                  ATTEND A FREE DEMO CLASS
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. SPECIAL COURSE OFFER */}
       <section id="courses" className="py-16 sm:py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -1164,6 +1221,49 @@ export default function ShlokaLandingPage() {
               >
                 CLAIM DUAL COURSE OFFER
               </button>
+            </div>
+          </div>
+
+          {/* Team Collaboration Showcase */}
+          <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200 shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 space-y-4 order-2 lg:order-1">
+                <span className="bg-[#10294B] text-[#F5BD3F] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                  Corporate Culture Simulation
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#10294B] leading-tight">
+                  Collaborative Peer Code Reviews &amp; Framework Design
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  QA engineers don&apos;t work in isolation. At Shloka Global Education, you collaborate in agile teams, participate in pull request (PR) reviews on GitHub, debate locator strategies, and refine test frameworks together.
+                </p>
+                <div className="space-y-2 text-xs sm:text-sm text-slate-700">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span>Peer-to-peer GitHub Pull Request reviews and feedback</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span>Pair programming &amp; automation framework debugging</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span>Agile sprint ceremonies &amp; backlog grooming practice</span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-slate-200 order-1 lg:order-2">
+                <Image
+                  src="/images/workspace-team.png"
+                  alt="Collaborative QA Team Reviewing Automation Code"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#0D2342]/90 backdrop-blur-md text-[#F5BD3F] text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-[#F5BD3F]/30">
+                  Active Sprint Collaboration
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2066,6 +2166,49 @@ export default function ShlokaLandingPage() {
               );
             })}
           </div>
+
+          {/* Quality Review & Mock Presentation Showcase */}
+          <div className="mt-12 bg-gradient-to-r from-[#10294B] to-[#0D2342] text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-[#F5BD3F]/30 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 space-y-4">
+                <span className="bg-[#F5BD3F] text-[#0D2342] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                  Leadership &amp; Architecture Focus
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                  Executive Quality Reviews &amp; Mock Technical Interviews
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Gain the confidence to present test strategies, defend automation design choices, and lead sprint reviews in front of senior tech leads and hiring managers.
+                </p>
+                <div className="space-y-2.5 text-xs sm:text-sm text-slate-200">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Real-world sprint demo &amp; release sign-off presentations</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>1-on-1 rigorous mock interviews covering top 100 SDET questions</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Resume overhaul with ATS-optimized QA architecture keywords</span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                <Image
+                  src="/images/quality-review.png"
+                  alt="Quality Review Meeting and Test Strategy Presentation"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#0D2342]/90 backdrop-blur-md text-[#F5BD3F] text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-[#F5BD3F]/30">
+                  Test Architecture Review
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -2125,6 +2268,53 @@ export default function ShlokaLandingPage() {
               Theoretical knowledge won’t clear modern tech interviews. Our students build, debug,
               and maintain real industry artifacts.
             </p>
+          </div>
+
+          {/* Featured Project Showcase: Modern QA Workstation & Live Dashboards */}
+          <div className="bg-[#10294B] text-white rounded-3xl p-6 sm:p-8 md:p-10 mb-12 shadow-2xl border-2 border-[#F5BD3F]/40 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                <Image
+                  src="/images/qa-dashboard.png"
+                  alt="Modern QA Automation Workspace with Test Dashboards"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 bg-[#0D2342]/90 backdrop-blur-md text-[#F5BD3F] text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-[#F5BD3F]/30">
+                  Live QA Dashboard Simulation
+                </div>
+              </div>
+              <div className="lg:col-span-6 space-y-4">
+                <span className="bg-[#F5BD3F] text-[#0D2342] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                  Real Workstation Experience
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                  Build Production-Grade Test Dashboards &amp; Metrics
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Our training simulates genuine enterprise environments. You will learn how to generate live ExtentReports, monitor test execution passes and failures, log real-time bug tracking metrics in Jira, and inspect CI/CD builds.
+                </p>
+                <div className="grid grid-cols-2 gap-3 pt-2 text-xs text-slate-200">
+                  <div className="flex items-center gap-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Real-Time Pass/Fail Stats</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Extent &amp; Allure Reports</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Jira Defect Workflows</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                    <CheckCircle2 className="w-4 h-4 text-[#F5BD3F] flex-shrink-0" />
+                    <span>Jenkins CI Dashboard</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
