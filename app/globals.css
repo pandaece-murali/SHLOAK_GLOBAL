@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy: #10294B;
+    --navy-dark: #0D2342;
+    --navy-light: #163664;
+    --gold: #F5BD3F;
+    --gold-hover: #E2AB2E;
+    --light-bg: #F5F7FA;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #1e293b;
+    background-color: #ffffff;
+  }
+}
+
+/* Custom utility classes */
+.bg-navy {
+  background-color: #10294B;
+}
+
+.bg-navy-dark {
+  background-color: #0D2342;
+}
+
+.bg-navy-light {
+  background-color: #163664;
+}
+
+.text-navy {
+  color: #10294B;
+}
+
+.text-navy-dark {
+  color: #0D2342;
+}
+
+.border-navy {
+  border-color: #10294B;
+}
+
+.bg-gold {
+  background-color: #F5BD3F;
+}
+
+.bg-gold-hover:hover {
+  background-color: #E2AB2E;
+}
+
+.text-gold {
+  color: #F5BD3F;
+}
+
+.border-gold {
+  border-color: #F5BD3F;
+}
+
+.bg-light-grey {
+  background-color: #F5F7FA;
+}
+
+/* Smooth Infinite Marquee Animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
