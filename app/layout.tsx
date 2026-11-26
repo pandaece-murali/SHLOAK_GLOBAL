@@ -17,7 +17,14 @@ export const metadata: Metadata = {
     "automation engineer course",
   ],
   icons: {
-    icon: "/images/logo.jpg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
+    shortcut: ["/favicon.ico"],
   },
   openGraph: {
     title: "Shloka Global Education | Automation & Manual Testing Training",
