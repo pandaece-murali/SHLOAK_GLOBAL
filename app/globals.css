@@ -62,20 +62,21 @@
   background-color: #F5F7FA;
 }
 
-/* Smooth Infinite Marquee Animations */
+/* Smooth Infinite Marquee Animations with GPU acceleration */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee:hover {
@@ -85,9 +86,79 @@
 .animate-marquee-slow {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-slow:hover {
   animation-play-state: paused;
+}
+
+/* Premium Gold CTA Button Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.btn-glow-gold {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 14px 0 rgba(245, 189, 63, 0.39);
+}
+
+.btn-glow-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 189, 63, 0.55);
+}
+
+.btn-glow-gold:active {
+  transform: translateY(0);
+}
+
+/* Card Hover Lift & Shadow */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(16, 41, 75, 0.15);
+}
+
+/* Subtle Golden Badge Pulse */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 189, 63, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(245, 189, 63, 0);
+  }
+}
+
+.pulse-gold {
+  animation: goldPulse 2.5s infinite;
+}
+
+/* Sleek Webkit Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D2342;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F5BD3F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E2AB2E;
 }
