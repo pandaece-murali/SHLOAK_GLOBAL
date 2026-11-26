@@ -25,7 +25,6 @@ import {
   AlertCircle,
   Menu,
   X,
-  ExternalLink,
   Star,
   Quote,
   Database,
@@ -168,7 +167,7 @@ export default function ShlokaLandingPage() {
       qualification: formData.qualification,
       enquiryType: formData.enquiryType,
       courseName: "Automation Testing + Free Manual Testing",
-      courseFee: "₹19,000",
+      courseFee: "₹19,000 (Regular: ₹59,000)",
       trainingMode: "100% Online",
       source: "Meta Ads",
       utmParameters: getUtmParams(),
@@ -331,7 +330,7 @@ export default function ShlokaLandingPage() {
               Limited Seats Offer
             </span>
             <span>
-              Enrol in <strong>Automation Testing (₹19,000)</strong> &amp; Get <strong>Manual Testing 100% FREE!</strong>
+              Enrol in <strong>Automation Testing (Offer: ₹19,000 <span className="line-through text-slate-400">₹59,000</span>)</strong> &amp; Get <strong>Manual Testing 100% FREE!</strong>
             </span>
           </div>
           <div className="flex items-center gap-3 text-slate-300">
@@ -610,8 +609,12 @@ export default function ShlokaLandingPage() {
                       Primary Course
                     </span>
                     <h3 className="text-lg sm:text-xl font-black text-white">AUTOMATION TESTING</h3>
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-xs sm:text-sm line-through text-slate-400 font-bold">₹59,000</span>
                       <span className="text-2xl sm:text-3xl font-black text-[#F5BD3F]">₹19,000</span>
+                      <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-black px-1.5 py-0.5 rounded">
+                        68% OFF
+                      </span>
                       <span className="text-xs text-slate-300">/ 45-Day Program</span>
                     </div>
                   </div>
@@ -1097,9 +1100,15 @@ export default function ShlokaLandingPage() {
                     <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">
                       Course Investment
                     </span>
-                    <div className="text-3xl sm:text-4xl font-black text-[#10294B]">₹19,000</div>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-sm sm:text-base line-through text-slate-400 font-bold">₹59,000</span>
+                      <span className="text-3xl sm:text-4xl font-black text-[#10294B]">₹19,000</span>
+                      <span className="text-xs bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-full">
+                        Save ₹40,000 (68% OFF)
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">
+                  <span className="text-xs bg-blue-100 text-[#10294B] font-bold px-2.5 py-1 rounded-full">
                     Complete 45 Days
                   </span>
                 </div>
@@ -1769,7 +1778,7 @@ export default function ShlokaLandingPage() {
               <div className="bg-[#10294B] text-white p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
                 <div>
                   <span className="bg-[#F5BD3F] text-[#0D2342] text-xs font-black px-3 py-1 rounded-full uppercase">
-                    Flagship Program • ₹19,000
+                    Flagship Program • Offer: ₹19,000 <span className="line-through opacity-75">₹59,000</span>
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black mt-2">
                     Automation Testing Architect Program (45 Days)
@@ -2389,8 +2398,8 @@ export default function ShlokaLandingPage() {
 
           {/* Pricing Highlight Pill */}
           <div className="inline-flex flex-col sm:flex-row items-center gap-3 bg-white/10 border border-white/20 px-6 py-3.5 rounded-2xl">
-            <span className="font-extrabold text-base text-white">
-              Automation Testing – <span className="text-[#F5BD3F]">₹19,000</span>
+            <span className="font-extrabold text-base text-white flex items-center gap-2">
+              Automation Testing – <span className="line-through text-slate-400 text-sm">₹59,000</span> <span className="text-[#F5BD3F] text-lg font-black">₹19,000</span>
             </span>
             <span className="hidden sm:inline text-white/40">|</span>
             <span className="font-extrabold text-base text-emerald-400">
@@ -2433,7 +2442,7 @@ export default function ShlokaLandingPage() {
               },
               {
                 q: "2. What is the Automation Testing fee?",
-                a: "The course fee for the comprehensive 45-day Automation Testing Architect Program is ₹19,000. This includes live training, course materials, framework code repositories, interview preparation, and placement assistance.",
+                a: "The regular course fee is ₹59,000, but under our limited-batch special offer, the complete 45-day Automation Testing Architect Program is slashed to just ₹19,000. This includes live training, course materials, framework code repositories, interview preparation, and placement assistance.",
               },
               {
                 q: "3. Is Manual Testing included for free?",
@@ -2604,7 +2613,7 @@ export default function ShlokaLandingPage() {
               </h4>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
-                  <strong className="text-white">Automation Testing:</strong> 45-Day Architect Program (₹19,000)
+                  <strong className="text-white">Automation Testing:</strong> 45-Day Architect Program (<span className="line-through text-slate-400">₹59,000</span> <span className="text-[#F5BD3F] font-bold">₹19,000</span>)
                 </li>
                 <li>
                   <strong className="text-emerald-400">Manual Testing:</strong> 15-Module FREE Add-On
@@ -2629,17 +2638,6 @@ export default function ShlokaLandingPage() {
                   <span>
                     GHMC Circle, Darma Reddy Colony, KPHB Colony, Kukatpally, Hyderabad – 500072
                   </span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <ExternalLink className="w-4 h-4 text-[#F5BD3F] flex-shrink-0 mt-0.5" />
-                  <a
-                    href="https://shlokaglobaleducation.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#F5BD3F] text-white"
-                  >
-                    shlokaglobaleducation.com
-                  </a>
                 </li>
                 <li className="pt-2">
                   <button
