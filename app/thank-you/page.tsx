@@ -17,13 +17,21 @@ import {
 } from "lucide-react";
 
 export default function ThankYouPage() {
-  // Fire Meta Pixel Lead event on thank-you page mount if not fired yet
+  // Fire Meta Pixel CompleteRegistration & Lead events on thank-you page mount
   useEffect(() => {
     type FbqFn = (action: string, eventName: string, params?: Record<string, unknown>) => void;
     if (typeof window !== "undefined" && (window as unknown as { fbq?: FbqFn }).fbq) {
       try {
         const fbq = (window as unknown as { fbq: FbqFn }).fbq;
         if (typeof fbq === "function") {
+          // Track CompleteRegistration requested for Meta Ads
+          fbq("track", "CompleteRegistration", {
+            content_name: "Automation Testing + Free Manual Testing",
+            currency: "INR",
+            value: 19000,
+            status: true,
+          });
+          // Also track Lead event
           fbq("track", "Lead", {
             content_name: "Automation Testing + Free Manual Testing",
             currency: "INR",

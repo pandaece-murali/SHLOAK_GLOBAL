@@ -992,7 +992,7 @@ export default function ShlokaLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#F5BD3F]/40">
               <Image
-                src="/images/hybrid-learning.png"
+                src="/images/hybrid-learning.webp"
                 alt="Interactive Live Online Learning Session with Expert Mentors"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -1266,7 +1266,7 @@ export default function ShlokaLandingPage() {
               </div>
               <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-xl border border-slate-200 order-1 lg:order-2">
                 <Image
-                  src="/images/workspace-team.png"
+                  src="/images/workspace-team.webp"
                   alt="Collaborative QA Team Reviewing Automation Code"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -2209,7 +2209,7 @@ export default function ShlokaLandingPage() {
               </div>
               <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                 <Image
-                  src="/images/quality-review.png"
+                  src="/images/quality-review.webp"
                   alt="Quality Review Meeting and Test Strategy Presentation"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -2287,7 +2287,7 @@ export default function ShlokaLandingPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                 <Image
-                  src="/images/qa-dashboard.png"
+                  src="/images/qa-dashboard.webp"
                   alt="Modern QA Automation Workspace with Test Dashboards"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
