@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   MapPin,
   CheckCircle2,
@@ -35,6 +36,7 @@ import {
 interface LeadFormData {
   fullName: string;
   mobileNumber: string;
+  email: string;
   qualification: string;
   enquiryType: string;
   consent: boolean;
@@ -43,11 +45,14 @@ interface LeadFormData {
 interface FormErrors {
   fullName?: string;
   mobileNumber?: string;
+  email?: string;
   qualification?: string;
   consent?: string;
 }
 
 export default function ShlokaLandingPage() {
+  const router = useRouter();
+
   // Mobile navigation state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -63,7 +68,8 @@ export default function ShlokaLandingPage() {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     mobileNumber: "",
-    qualification: "",
+    email: "",
+    qualification: "B.Tech / BE",
     enquiryType: "Book Free Demo Class",
     consent: true,
   });
@@ -105,15 +111,17 @@ export default function ShlokaLandingPage() {
     const phoneRegex = /^[6-9]\d{9}$/;
     const cleanPhone = formData.mobileNumber.replace(/\D/g, "");
     if (!cleanPhone || !phoneRegex.test(cleanPhone)) {
-      errors.mobileNumber = "Enter a valid 10-digit Indian mobile number (e.g., 9876543210).";
+      errors.mobileNumber = "Enter a valid 10-digit mobile number.";
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
+      errors.email = "Enter a valid email address.";
     }
 
     if (!formData.qualification) {
-      errors.qualification = "Please select your highest qualification.";
-    }
-
-    if (!formData.consent) {
-      errors.consent = "You must accept the communication consent to proceed.";
+      errors.qualification = "Please select qualification.";
     }
 
     setFormErrors(errors);
@@ -149,21 +157,10 @@ export default function ShlokaLandingPage() {
     setSubmitStatus("idle");
     setStatusMessage("");
 
-    const webhookUrl = process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL;
-
-    // Check if webhook URL is configured
-    if (!webhookUrl || webhookUrl.trim() === "") {
-      setIsSubmitting(false);
-      setSubmitStatus("missing_config");
-      setStatusMessage(
-        "Lead configuration notice: Webhook URL is not set. Please configure NEXT_PUBLIC_LEAD_WEBHOOK_URL in environment settings to send leads directly to GoHighLevel."
-      );
-      return;
-    }
-
     const payload = {
       fullName: formData.fullName.trim(),
       mobileNumber: formData.mobileNumber.replace(/\D/g, ""),
+      email: formData.email.trim().toLowerCase(),
       qualification: formData.qualification,
       enquiryType: formData.enquiryType,
       courseName: "Automation Testing + Free Manual Testing",
@@ -176,7 +173,7 @@ export default function ShlokaLandingPage() {
     };
 
     try {
-      const response = await fetch(webhookUrl, {
+      const response = await fetch("/api/lead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -185,12 +182,9 @@ export default function ShlokaLandingPage() {
         body: JSON.stringify(payload),
       });
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setStatusMessage(
-          "Thank you for your interest! Our admissions team will contact you shortly with the course details and free demo class schedule."
-        );
+      const resData = await response.json().catch(() => ({}));
 
+      if (response.ok && resData.success) {
         // Fire Meta Pixel Lead event only after successful webhook acceptance & prevent duplicates
         type FbqFn = (action: string, eventName: string, params?: Record<string, unknown>) => void;
         if (!leadEventFired && typeof window !== "undefined" && (window as unknown as { fbq?: FbqFn }).fbq) {
@@ -208,14 +202,20 @@ export default function ShlokaLandingPage() {
             console.error("Meta Pixel event error:", pixelErr);
           }
         }
+
+        // Direct instant navigation to Thank You page
+        router.push("/thank-you");
+        return;
       } else {
-        throw new Error(`Server returned status ${response.status}`);
+        throw new Error(resData?.error || `Server returned status ${response.status}`);
       }
     } catch (err: unknown) {
-      console.error("Webhook submission error:", err);
+      console.error("Lead submission error:", err);
       setSubmitStatus("error");
       setStatusMessage(
-        "There was a network issue submitting your enquiry. Please check your connection and try submitting again."
+        err instanceof Error
+          ? err.message
+          : "There was a network issue submitting your enquiry. Please check your connection and try submitting again."
       );
     } finally {
       setIsSubmitting(false);
@@ -736,10 +736,18 @@ export default function ShlokaLandingPage() {
                       <p>3. Attend the live session and experience the curriculum first-hand.</p>
                     </div>
 
+                    <a
+                      href="/thank-you"
+                      className="inline-flex items-center justify-center gap-1.5 w-full bg-[#10294B] hover:bg-[#0D2342] text-white text-xs font-bold py-2.5 px-4 rounded-lg shadow transition-colors"
+                    >
+                      <span>View Full Confirmation Details</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#F5BD3F]" />
+                    </a>
+
                     <button
                       type="button"
                       onClick={() => setSubmitStatus("idle")}
-                      className="text-xs text-slate-500 underline hover:text-slate-800"
+                      className="text-xs text-slate-500 underline hover:text-slate-800 block mx-auto"
                     >
                       Submit another enquiry
                     </button>
@@ -770,6 +778,7 @@ export default function ShlokaLandingPage() {
                       <input
                         type="text"
                         name="fullName"
+                        autoComplete="name"
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Rahul Sharma"
@@ -796,6 +805,7 @@ export default function ShlokaLandingPage() {
                         <input
                           type="tel"
                           name="mobileNumber"
+                          autoComplete="tel"
                           maxLength={10}
                           value={formData.mobileNumber}
                           onChange={handleInputChange}
@@ -814,30 +824,74 @@ export default function ShlokaLandingPage() {
                       )}
                     </div>
 
-                    {/* Highest Qualification */}
+                    {/* Email ID */}
                     <div>
                       <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
-                        Highest Qualification <span className="text-rose-500">*</span>
+                        Email ID <span className="text-rose-500">*</span>
                       </label>
-                      <select
-                        name="qualification"
-                        value={formData.qualification}
+                      <input
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                        value={formData.email}
                         onChange={handleInputChange}
+                        placeholder="e.g. rahul@gmail.com"
                         className={`w-full px-3.5 py-2 border rounded-lg text-sm text-slate-900 focus:outline-none transition-all ${
-                          formErrors.qualification
+                          formErrors.email
                             ? "border-rose-500 focus:ring-2 focus:ring-rose-200"
                             : "border-slate-300 focus:border-[#10294B] focus:ring-2 focus:ring-[#10294B]/10"
                         }`}
-                      >
-                        <option value="">Select Qualification</option>
-                        <option value="B.Tech / B.E.">B.Tech / B.E. (Any Stream)</option>
-                        <option value="BCA / MCA">BCA / MCA</option>
-                        <option value="B.Sc / M.Sc">B.Sc / M.Sc (Computer / IT / Other)</option>
-                        <option value="Any Graduate">Any Degree / Graduate</option>
-                        <option value="Post Graduate">Post Graduate</option>
-                        <option value="Final Year Student">Final Year Student</option>
-                        <option value="Working Professional">Working Professional (Career Switch)</option>
-                      </select>
+                      />
+                      {formErrors.email && (
+                        <p className="text-rose-600 text-xs mt-0.5 font-medium">{formErrors.email}</p>
+                      )}
+                    </div>
+
+                    {/* Quick 1-Tap Qualification Selection */}
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide">
+                          Highest Qualification <span className="text-rose-500">*</span>
+                        </label>
+                        <span className="text-[10px] text-slate-500">1-Tap Select</span>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+                        {[
+                          { label: "B.Tech / BE", val: "B.Tech / B.E." },
+                          { label: "BCA / MCA", val: "BCA / MCA" },
+                          { label: "Any Graduate", val: "Any Graduate" },
+                          { label: "Working Pro", val: "Working Professional" },
+                        ].map((item) => {
+                          const isSelected =
+                            formData.qualification === item.val ||
+                            formData.qualification === item.label;
+                          return (
+                            <button
+                              key={item.label}
+                              type="button"
+                              onClick={() => {
+                                setFormData((prev) => ({
+                                  ...prev,
+                                  qualification: item.val,
+                                }));
+                                if (formErrors.qualification) {
+                                  setFormErrors((prev) => ({
+                                    ...prev,
+                                    qualification: undefined,
+                                  }));
+                                }
+                              }}
+                              className={`py-1.5 px-2 rounded-lg text-xs font-bold border transition-all text-center ${
+                                isSelected
+                                  ? "bg-[#10294B] text-[#F5BD3F] border-[#10294B] shadow-sm"
+                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                              }`}
+                            >
+                              {item.label}
+                            </button>
+                          );
+                        })}
+                      </div>
                       {formErrors.qualification && (
                         <p className="text-rose-600 text-xs mt-0.5 font-medium">
                           {formErrors.qualification}
@@ -845,78 +899,27 @@ export default function ShlokaLandingPage() {
                       )}
                     </div>
 
-                    {/* Enquiry Type */}
-                    <div>
-                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-0.5">
-                        Enquiry Type
-                      </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
-                        {["Book Free Demo Class", "Get Course Details", "Talk to a Counsellor"].map(
-                          (type) => (
-                            <label
-                              key={type}
-                              className={`flex items-center gap-1.5 p-1.5 rounded-lg border text-[11px] cursor-pointer font-medium transition-colors ${
-                                formData.enquiryType === type
-                                  ? "bg-[#10294B] text-[#F5BD3F] border-[#10294B]"
-                                  : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
-                              }`}
-                            >
-                              <input
-                                type="radio"
-                                name="enquiryType"
-                                value={type}
-                                checked={formData.enquiryType === type}
-                                onChange={handleInputChange}
-                                className="sr-only"
-                              />
-                              <span className="truncate">{type}</span>
-                            </label>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Consent Checkbox */}
-                    <div className="pt-0.5">
-                      <label className="flex items-start gap-2 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          name="consent"
-                          checked={formData.consent}
-                          onChange={handleInputChange}
-                          className="mt-0.5 h-3.5 w-3.5 rounded border-slate-300 text-[#10294B] focus:ring-[#10294B]"
-                        />
-                        <span className="text-[11px] text-slate-600 leading-tight">
-                          I agree to receive course updates, free demo class details and counselling
-                          information from Shloka Global Education.
-                        </span>
-                      </label>
-                      {formErrors.consent && (
-                        <p className="text-rose-600 text-xs mt-0.5 font-medium">{formErrors.consent}</p>
-                      )}
-                    </div>
-
                     {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#F5BD3F] hover:bg-[#E2AB2E] disabled:opacity-75 disabled:cursor-not-allowed text-[#0D2342] font-black text-sm py-2.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-2"
+                      className="w-full bg-[#F5BD3F] hover:bg-[#E2AB2E] disabled:opacity-75 disabled:cursor-not-allowed text-[#0D2342] font-black text-sm py-3 px-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 mt-3"
                     >
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-[#0D2342] border-t-transparent rounded-full animate-spin" />
-                          <span>Submitting enquiry...</span>
+                          <span>Reserving your demo seat...</span>
                         </>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          <span>BOOK MY FREE DEMO</span>
+                          <span>BOOK MY FREE DEMO NOW 🚀</span>
                         </>
                       )}
                     </button>
 
-                    <p className="text-[10px] text-center text-slate-500 pt-0.5">
-                      🔒 100% Privacy Guaranteed. No Spam Ever.
+                    <p className="text-[10px] text-center text-slate-500 pt-1 leading-snug">
+                      🔒 100% Privacy Guaranteed. By submitting, you agree to receive demo class updates from Shloka Global Education.
                     </p>
                   </form>
                 )}

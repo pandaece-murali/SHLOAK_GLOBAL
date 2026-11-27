@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Shloka Global Education | Automation & Manual Testing Training",
     description:
       "45-Day Industry-Focused Automation Testing program at ₹19,000 + FREE Manual Testing training. 100% online training with live projects.",
-    url: "https://shlokaglobaleducation.com",
+    url: "https://tech.shlokaglobaleducation.com",
     siteName: "Shloka Global Education",
     images: [
       {
@@ -56,7 +56,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "1909519447096677";
 
   return (
     <html lang="en" className="scroll-smooth">
